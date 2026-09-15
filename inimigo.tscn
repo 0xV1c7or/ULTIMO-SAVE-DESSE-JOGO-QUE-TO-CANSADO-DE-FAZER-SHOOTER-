@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cf2ebk4s7m5pc"]
+
+[ext_resource type="Script" uid="uid://bb0w4hmhj14xv" path="res://inimigo.gd" id="1_0b8xr"]
+[ext_resource type="Texture2D" uid="uid://b2icuog34n0dq" path="res://assetpack/Bonus (enemies)/enemy-z.png" id="1_030df"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(39, 28)
+
+[node name="Inimigo" type="Area2D" unique_id=1792406420]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_0b8xr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1260606404]
+scale = Vector2(0.62686604, 0.55454534)
+texture = ExtResource("1_030df")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218462308]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=360192153]
+position = Vector2(63, -79)
+rect = Rect2(-83, 65, 39, 28)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

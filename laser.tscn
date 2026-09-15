@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://clw7htcimo005"]
+
+[ext_resource type="Script" uid="uid://7dnuvhn26qi6" path="res://laser.gd" id="1_6vqwg"]
+[ext_resource type="Texture2D" uid="uid://bn0uwygqbkl8k" path="res://assetpack/Bonus (player ship)/shooting laser-sheet.png" id="2_g6b45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(158.58603, 25.029411)
+
+[node name="Laser" type="Area2D" unique_id=758271414 groups=["tiro"]]
+collision_mask = 4
+script = ExtResource("1_6vqwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1218797532]
+position = Vector2(150, 325)
+scale = Vector2(0.31990522, 0.40217394)
+texture = ExtResource("2_g6b45")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161126933]
+position = Vector2(150, 325)
+scale = Vector2(0.31990522, 0.4021739)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=413123403]
+position = Vector2(150, 324)
+rect = Rect2(-25, -4, 50, 10)
